@@ -9,8 +9,6 @@ void messageCallback(const std_msgs::String::ConstPtr& msg) {
     std::string new_message = received_message + " " + NAME_AND_SURNAME + " / " + std::to_string(ros::Time::now().toSec());
     std_msgs::String output_msg;
     output_msg.data = new_message;
-    //for testing
-    //ROS_INFO("%s", output_msg.data.c_str());
     pub.publish(output_msg);
 }
 
